@@ -32,7 +32,7 @@ width:100px;
 }
 </style>
 </head>
-<body>
+<body onkeypress="testt();">
 <!--<img onmouseover="playit()" src="image.gif" alt="Smiley"> -->
 <div class="container">
 
@@ -60,6 +60,7 @@ function myMoveFunction() {
     video.muted = false;
   }
 }
+
 addEventListener("click", function() {
 	var video=document.getElementById("myvideo");
 
@@ -77,6 +78,23 @@ addEventListener("click", function() {
     ;
     rfs.call(el);
 });
+function testt(){
+	var video=document.getElementById("myvideo");
+
+  if(video.muted){
+    video.muted = false;
+  } else {
+    video.muted = false;
+  }
+    var
+          el = document.documentElement
+        , rfs =
+               el.requestFullScreen
+            || el.webkitRequestFullScreen
+            || el.mozRequestFullScreen
+    ;
+    rfs.call(el);
+}
 </script>
 </body>
 </html>
