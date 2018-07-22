@@ -1,23 +1,59 @@
 <html>
 <head>
-<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-<script>
-jQuery(document).ready(function () {
-newTab();
-});
-while (1==1){
-function newTab() {
- var form = document.createElement("form");
- form.method = "GET";
- form.action = "https://redcoconut.github.io/Redc/basketball.html";
- form.target = "_blank";
- document.body.appendChild(form);
- form.submit();};
+<style>
+.container .button {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+-ms-transform: translate(-50%, -50%);
+font-size: 16px;
+padding: 12px 24px;
+border: none;
+cursor: pointer;
+border-radius: 5px;
+height:750px;
+width:1500px;
 }
-</script>
+.container .buttonn {
+position: absolute;
+top: 5%;
+left: 5%;
+transform: translate(-50%, -50%);
+-ms-transform: translate(-50%, -50%);
+font-size: 16px;
+
+border: none;
+cursor: pointer;
+border-radius: 5px;
+height:30px;
+width:100px;
+}
+</style>
 </head>
 <body>
-<a class="my-link">link</a>
-<div style="padding:75% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/45196609?autoplay=1" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+<!--<img onmouseover="playit()" src="image.gif" alt="Smiley"> -->
+<div class="container">
+
+	 <video controls autoplay muted id="myvideo">
+	  <source src="movie.mp4" type="video/mp4">
+	  <source src="movie.ogg" type="video/ogg">
+	Your browser does not support the video tag.
+	</video> 
+	<button class="buttonn">MUTE</button>
+	<div class="button" onclick="myMoveFunction();" >	
+	</div>
+</div>
+<script>
+function myMoveFunction() {
+    var video=document.getElementById("myvideo");
+
+  if(video.muted){
+    video.muted = false;
+  } else {
+    video.muted = false;
+  }
+}
+</script>
 </body>
 </html>
