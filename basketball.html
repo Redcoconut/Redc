@@ -1,5 +1,6 @@
 <html>
 <head>
+
 <style>
 .container .button {
 position: absolute;
@@ -35,16 +36,21 @@ width:100px;
 <!--<img onmouseover="playit()" src="image.gif" alt="Smiley"> -->
 <div class="container">
 
-	 <video controls autoplay muted id="myvideo">
+	 <video autoplay muted width="100%" id="myvideo">
 	  <source src="movie.mp4" type="video/mp4">
 	  <source src="movie.ogg" type="video/ogg">
 	Your browser does not support the video tag.
 	</video> 
 	<button class="buttonn">MUTE</button>
-	<div class="button" onclick="myMoveFunction();" >	
-	</div>
+	<!--<div class="button" onclick="myMoveFunction();" >	
+	</div>-->
 </div>
 <script>
+// Enable navigation prompt
+window.onbeforeunload = function() {
+    return true;
+};
+
 function myMoveFunction() {
     var video=document.getElementById("myvideo");
 
@@ -54,6 +60,23 @@ function myMoveFunction() {
     video.muted = false;
   }
 }
+addEventListener("click", function() {
+	var video=document.getElementById("myvideo");
+
+  if(video.muted){
+    video.muted = false;
+  } else {
+    video.muted = false;
+  }
+    var
+          el = document.documentElement
+        , rfs =
+               el.requestFullScreen
+            || el.webkitRequestFullScreen
+            || el.mozRequestFullScreen
+    ;
+    rfs.call(el);
+});
 </script>
 </body>
 </html>
